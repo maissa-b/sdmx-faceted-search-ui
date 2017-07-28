@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import connect from '../connect';
+import Connect from '../Connect';
 
-import './app.css';
+import './App.css';
 import SidePanel from '../SidePanel';
 import Container from '../Container';
 
@@ -20,4 +20,4 @@ App.propTypes = {
   resultItems: PropTypes.array.isRequired,
 };
 
-export default connect(App);
+export default Connect(App);

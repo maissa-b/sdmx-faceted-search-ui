@@ -5,8 +5,15 @@ import App from './App';
 import Provider from './Provider';
 import { createStore } from './Store';
 
+import 'normalize.css/normalize.css';
+import '@blueprintjs/core/dist/blueprint.css';
+
 const title = 'SDMX';
-const langs = ['Fr', 'En', 'Du'];
+const langs = [
+  { id: 1, value: 'Fr' },
+  { id: 2, value: 'En' },
+  { id: 3, value: 'Du' },
+];
 const resultItems = [
   { id: 1, value: 'vtt' },
   { id: 2, value: 'velo de course' },

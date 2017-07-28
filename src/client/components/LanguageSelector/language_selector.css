@@ -1,3 +1,5 @@
 .language-selector-container {
   display: flex;
+  margin-top: -100px;
+  z-index: 3;
 }

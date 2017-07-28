@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Components } from 'react';
 
 import './side_panel.css';
 import FacetedBox from '../FacetedBox';

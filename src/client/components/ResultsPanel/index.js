@@ -7,7 +7,7 @@ import DataFlow from '../DataFlow';
 
 const ResultsPanel = ({ resultItems, searchValue }) => {
   const items = resultItems.filter(item =>
-    item.value.match(searchValue) !== null);
+    item.value.match(searchValue.toLowerCase()) !== null);
 
   const display = items.map(result => <DataFlow key={result.id} result={result.value} />);
 

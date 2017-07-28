@@ -1,5 +1,5 @@
 .side-panel-container {
-  display: flex;
+  display: none;
   flex-direction: column;
   flex-wrap: nowrap;
   width: 200px;

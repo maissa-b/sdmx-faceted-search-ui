@@ -6,7 +6,7 @@ import './language_selector.css';
 const LanguageSelector = ({ langs }) => (
   <div className="language-selector-container">
     <select>
-      { langs.map(lang => <option key={lang}>{lang}</option>) }
+      { langs.map(lang => <option key={lang.id}>{lang.value}</option>) }
     </select>
   </div>
 );
