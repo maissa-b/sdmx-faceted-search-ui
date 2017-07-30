@@ -1,6 +1,10 @@
 .side-panel-container {
   display: none;
   flex-direction: column;
-  flex-wrap: nowrap;
-  width: 200px;
+  width: 0px;
+  min-height: 100%;
+  margin-top: 100px;
+  z-index: 4;
+  transition: 0.2s;
+  position: absolute;
 }
