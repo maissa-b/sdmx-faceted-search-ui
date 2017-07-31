@@ -3,10 +3,24 @@ import should from 'should';
 import { shallow } from 'enzyme';
 
 import ResultsPanel from '..';
+import SearchInfo from '../../SearchInfo';
 
 const { describe, it } = global;
 
-describe('test component ResultsPanel', function() {
-    const wrapper = shallow(<ResultsPanel resultItems={['item1', 'item2']} searchValue={'onsenfou'} />);
-    should(wrapper.resultItems).be.an.Array();
+describe('Tests component ResultsPanel\n', function() {
+    const root =
+        <ResultsPanel
+            className=''
+            resultItems={[
+                {id: 1, value: 'test1'},
+                {id: 2, value: 'test2'},
+                {id: 3, value: 'test3'},
+                {id: 4, value: 'test4'},
+            ]}
+            searchValue='recherche'
+        />
+    it('Should render of SearchInfo', function() {
+        const wrapper = shallow(root);
+		should(wrapper.matchesElement(<SearchInfo numberResults={3} />));
+    });
 });

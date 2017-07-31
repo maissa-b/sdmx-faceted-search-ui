@@ -3,9 +3,7 @@ import React from 'react';
 import './items.css';
 
 const Items = () => (
-  <div className="items-container">
-    <li>Items</li>
-  </div>
+  <li className="items-container" >Items</li>
 );
 
 export default Items;

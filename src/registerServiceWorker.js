@@ -34,10 +34,10 @@ export default function register() {
 
       if (!isLocalhost) {
         // Is not local host. Just register service worker
-        registerValidSW(swUrl);
+        registerValidSW(swUrl); // eslint-disable-line 
       } else {
         // This is running on localhost. Lets check if a service worker still exists or not.
-        checkValidServiceWorker(swUrl);
+        checkValidServiceWorker(swUrl); // eslint-disable-line  
       }
     });
   }
@@ -47,7 +47,7 @@ function registerValidSW(swUrl) {
   navigator.serviceWorker
     .register(swUrl)
     .then(registration => {
-      registration.onupdatefound = () => {
+      registration.onupdatefound = () => { // eslint-disable-line 
         const installingWorker = registration.installing;
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
@@ -56,19 +56,19 @@ function registerValidSW(swUrl) {
               // the fresh content will have been added to the cache.
               // It's the perfect time to display a "New content is
               // available; please refresh." message in your web app.
-              console.log('New content is available; please refresh.');
+              console.log('New content is available; please refresh.'); // eslint-disable-line 
             } else {
               // At this point, everything has been precached.
               // It's the perfect time to display a
               // "Content is cached for offline use." message.
-              console.log('Content is cached for offline use.');
+              console.log('Content is cached for offline use.'); // eslint-disable-line 
             }
           }
         };
       };
     })
     .catch(error => {
-      console.error('Error during service worker registration:', error);
+      console.error('Error during service worker registration:', error); // eslint-disable-line 
     });
 }
 
@@ -93,7 +93,7 @@ function checkValidServiceWorker(swUrl) {
       }
     })
     .catch(() => {
-      console.log(
+      console.log( // eslint-disable-line 
         'No internet connection found. App is running in offline mode.',
       );
     });

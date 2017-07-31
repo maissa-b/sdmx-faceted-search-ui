@@ -1,12 +1,10 @@
+import '@blueprintjs/core/dist/blueprint.css';
 import React from 'react';
 import { render } from 'react-dom';
 import './index.css';
 import App from './App';
 import Provider from './Provider';
 import { createStore } from './Store';
-
-import 'normalize.css/normalize.css';
-import '@blueprintjs/core/dist/blueprint.css';
 
 const title = 'SDMX';
 const langs = [
