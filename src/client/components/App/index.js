@@ -1,4 +1,6 @@
 import React from 'react';
+import axios from 'axios';
+
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { compose, withStateHandlers } from 'recompose';
@@ -13,6 +15,14 @@ import Container from '../Container';
 const App = ({ title, langs, resultItems, searchValue, isHidden, search: doSearch,
 facetedSearch: doFacetedSearch, filter: doFilter, addToCard: doAddToCard, toggleIsHiddenHandler }) => (
   <div className="App">
+    <button
+      onClick={e => {
+        e.preventDefault();
+        axios.post('http://rp3.redpelicans.com:3006/api/status', { data: {} })
+        .then(() => console.log('bon'))
+        .catch(() => console.log('pas bon'));
+      }}
+    />
     <SidePanel
       isHidden={isHidden}
       toggleIsHiddenHandler={toggleIsHiddenHandler}
