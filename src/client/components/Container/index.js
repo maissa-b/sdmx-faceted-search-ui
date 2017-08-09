@@ -5,10 +5,23 @@ import './container.css';
 import Header from '../Header';
 import MainPanel from '../MainPanel';
 
-const Container = ({ title, langs, resultItems, toggleIsHiddenHandler, isHidden, searchHandler, searchValue, addToCard }) => (
+const Container = ({ title, search, langs, fruits, resultItems, toggleIsHiddenHandler, isHidden, searchHandler, searchValue, addToCard, isSearchDisabled }) => (
   <div className="container-container">
-    <Header title={title} langs={langs} toggleIsHiddenHandler={toggleIsHiddenHandler} isHidden={isHidden} />
-    <MainPanel searchValue={searchValue} resultItems={resultItems} searchHandler={searchHandler} addToCard={addToCard} />
+    <Header
+      title={title}
+      langs={langs}
+      toggleIsHiddenHandler={toggleIsHiddenHandler}
+      isHidden={isHidden}
+    />
+    <MainPanel
+      search={search}
+      searchValue={searchValue}
+      fruits={fruits}
+      isSearchDisabled={isSearchDisabled}
+      resultItems={resultItems}
+      searchHandler={searchHandler}
+      addToCard={addToCard}
+    />
   </div>
 );
 
@@ -18,9 +31,12 @@ Container.propTypes = {
   resultItems: PropTypes.array.isRequired,
   toggleIsHiddenHandler: PropTypes.func.isRequired,
   isHidden: PropTypes.bool.isRequired,
+  isSearchDisabled: PropTypes.bool.isRequired,
   searchHandler: PropTypes.func.isRequired,
   searchValue: PropTypes.string.isRequired,
   addToCard: PropTypes.func.isRequired,
+  fruits: PropTypes.array.isRequired,
+  search: PropTypes.func.isRequired,
 };
 
 export default Container;

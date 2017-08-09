@@ -35,4 +35,8 @@ Header.propTypes = {
   isHidden: PropTypes.bool.isRequired,
 };
 
+Header.defaultProps = {
+  fruit: undefined,
+};
+
 export default onlyUpdateForKeys(['isHidden'])(Header);

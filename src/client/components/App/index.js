@@ -10,7 +10,7 @@ import './App.css';
 import SidePanel from '../SidePanel';
 import Container from '../Container';
 
-const App = ({ title, langs, resultItems, searchValue, isHidden, search: doSearch,
+const App = ({ title, langs, resultItems, searchValue, isHidden, search: doSearch, fruits, isSearchDisabled,
 facetedSearch: doFacetedSearch, filter: doFilter, addToCard: doAddToCard, toggleIsHiddenHandler }) => (
   <div className="App">
     <SidePanel
@@ -22,12 +22,15 @@ facetedSearch: doFacetedSearch, filter: doFilter, addToCard: doAddToCard, toggle
     <Container
       title={title}
       langs={langs}
+      isSearchDisabled={isSearchDisabled}
+      search={doSearch}
       resultItems={resultItems}
       isHidden={isHidden}
       toggleIsHiddenHandler={toggleIsHiddenHandler}
       searchHandler={doSearch}
       searchValue={searchValue}
       addToCard={doAddToCard}
+      fruits={fruits}
     />
   </div>
 );
@@ -66,6 +69,8 @@ const mapStateToProps = state => ({
   searchValue: state.searchValue,
   filterValue: state.filterValue,
   facetedValue: state.facetedValue,
+  fruits: state.fruits,
+  isSearchDisabled: state.isSearchDisabled,
   resultItems: filterDataFlows(state),
 });
 
@@ -88,7 +93,9 @@ App.propTypes = {
   addToCard: PropTypes.func.isRequired,
   filter: PropTypes.func.isRequired,
   searchValue: PropTypes.string.isRequired,
+  fruits: PropTypes.array.isRequired,
   isHidden: PropTypes.bool.isRequired,
+  isSearchDisabled: PropTypes.bool.isRequired,
 };
 
 const enhance = compose(

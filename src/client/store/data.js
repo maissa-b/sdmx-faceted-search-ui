@@ -55,10 +55,16 @@ const resultItems = [
   },
 ];
 
-const searchValue = '';
+const searchValue = 'test';
 const facetedValue = '';
 const filterValue = '';
 const cardItems = [];
+const fruit = {
+  icon: '',
+  color: '',
+};
+const fruits = new Array(9);
+const isSearchDisabled = false;
 
 export const initialState = {
   title,
@@ -68,4 +74,7 @@ export const initialState = {
   facetedValue,
   filterValue,
   cardItems,
+  fruit,
+  fruits,
+  isSearchDisabled,
 };

@@ -10,6 +10,8 @@ import { initialState } from './store/data';
 
 const store = configureStore(initialState);
 
+// const dispatcher = () => store.dispatch(loadFruit());
+
 const root = (
   <Provider store={store}>
     <App />
