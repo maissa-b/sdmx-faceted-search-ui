@@ -59,6 +59,8 @@ const searchValue = '';
 const facetedValue = '';
 const filterValue = '';
 const cardItems = [];
+const dataflows = [];
+const facets = {};
 
 export const initialState = {
   title,
@@ -68,4 +70,6 @@ export const initialState = {
   facetedValue,
   filterValue,
   cardItems,
+  dataflows,
+  facets,
 };

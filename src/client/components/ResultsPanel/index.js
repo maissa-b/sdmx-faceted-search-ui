@@ -6,17 +6,18 @@ import './results_panel.css';
 import SearchInfo from '../SearchInfo';
 import DataFlow from '../DataFlow';
 
-const ResultsPanel = ({ resultItems, searchValue, addToCard }) => (
+const ResultsPanel = ({ dataflows, searchValue, addToCard }) => (
   <div className="resultpanel">
-    <SearchInfo numberResults={resultItems.length} searchValue={searchValue} />
+    <SearchInfo numberResults={dataflows.length} searchValue={searchValue} />
     <ul>
-      { resultItems.map(result => <DataFlow key={result.id} result={result} addToCard={addToCard} />) }
+      { dataflows.map(dataflow => <DataFlow key={dataflow.id} dataflows={dataflow} addToCard={addToCard} />) }
     </ul>
   </div>
 );
 
 ResultsPanel.propTypes = {
-  resultItems: PropTypes.array.isRequired,
+  // resultItems: PropTypes.array.isRequired,
+  dataflows: PropTypes.array.isRequired,
   searchValue: PropTypes.string.isRequired,
   addToCard: PropTypes.func.isRequired,
 };

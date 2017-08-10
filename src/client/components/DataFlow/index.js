@@ -4,21 +4,27 @@ import { withHandlers } from 'recompose';
 
 import './data_flow.css';
 
-const DataFlow = ({ result, handleInput }) => (
+const DataFlow = ({ dataflows, handleInput }) => (
   <div className="pt-card pt-elevation-0 dataflowcontainer">
-    <div className="imagecontainer">
-      <img alt="" className="image" src={result.payload.image} />
-    </div>
     <div className="dataflowinfo">
-      <li className="dataflowname">{result.payload.name}</li>
-      <p className="price">price: {result.payload.price} $</p>
+      <li className="dataflowname">{dataflows.name}</li>
+      <li className="dataflowname">{dataflows.id}</li>
     </div>
-    <button id={result.id} onClick={handleInput} />
+    <button id={dataflows.id} onClick={handleInput} />
   </div>
 );
 
+// Object.entries
+// api/config
+
+// error handling :
+// -> request json
+// verb, uri, body
+// action error -> au moins message et status (vert et rouge) et header, id incremental
+// willReceiveProps
+
 DataFlow.propTypes = {
-  result: PropTypes.object.isRequired,
+  dataflows: PropTypes.object.isRequired,
   handleInput: PropTypes.func.isRequired,
 };
 

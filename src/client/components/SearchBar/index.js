@@ -17,11 +17,20 @@ const SearchBar = ({ handleInput }) => (
 
 SearchBar.propTypes = {
   handleInput: PropTypes.func.isRequired,
+  // getDataflows: PropTypes.func.isRequired,
 };
 
 export default withHandlers({
-  handleInput: ({ searchHandler }) => event => {
+  handleInput: ({ getDataflows }) => event => {
     event.preventDefault();
-    searchHandler(event.target.value);
+    getDataflows(event.target.value);
   },
 })(SearchBar);
+
+// export default withHandlers({
+//   handleInput: ({ searchHandler }) => event => {
+//     event.preventDefault();
+//     searchHandler(event.target.value);
+//   },
+// })(SearchBar);
+
